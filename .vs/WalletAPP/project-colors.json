@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "73c424be-9664-4c52-bb2d-99df86b9bdb3": {
+      "ProjectGuid": "73c424be-9664-4c52-bb2d-99df86b9bdb3",
+      "DisplayName": "WalletAPP",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "0c716c34-67b8-4ada-a78f-51e89ea97c9b": {
+      "ProjectGuid": "0c716c34-67b8-4ada-a78f-51e89ea97c9b",
+      "DisplayName": "WalletAPP.iOS",
+      "ColorIndex": 1
+    },
+    "4ea52a19-025c-47f8-964c-fa09c228e0c0": {
+      "ProjectGuid": "4ea52a19-025c-47f8-964c-fa09c228e0c0",
+      "DisplayName": "WalletAPP.Android",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

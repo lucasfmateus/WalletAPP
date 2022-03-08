@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:xforms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" 
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="WalletAPP.Views.Parts.WalletView"
+             >
+    
+    <ContentView.Content>
+        
+        <Grid
+            RowSpacing="0"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Grid
+                Padding="16,0,0,0"
+                Grid.Row="0"
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Text="Wallet"
+                    FontFamily="{StaticResource MetropolisFontBold}"
+                    TextColor="{DynamicResource TextColorOfPrimaryColor}"
+                    />
+                
+            </Grid>
+            
+            <chart:SfChart
+                Grid.Row="1"
+                x:Name="Chart" 
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand"
+                >
+
+                <chart:SfChart.ChartBehaviors>
+
+                    <chart:ChartZoomPanBehavior 
+                        EnablePanning="True" 
+                        EnableZooming="False" 
+                        EnableDoubleTap="False" 
+                        />
+
+                </chart:SfChart.ChartBehaviors>
+
+                <chart:SfChart.PrimaryAxis>
+
+                    <chart:CategoryAxis                            
+                        EdgeLabelsDrawingMode="Fit"
+                        LabelsIntersectAction="MultipleRows"
+                        PlotOffset="0"
+                        AutoScrollingMode="Start"
+                        AutoScrollingDelta="5"
+                        ShowMajorGridLines="False"
+                        IsInversed="True"
+                        Interval="1"
+                        >
+
+                        <chart:CategoryAxis.LabelStyle>
+
+                            <chart:ChartAxisLabelStyle
+                                FontAttributes="Bold"
+                                LabelsPosition="Outside"
+                                />
+
+                        </chart:CategoryAxis.LabelStyle>
+
+                    </chart:CategoryAxis>
+
+                </chart:SfChart.PrimaryAxis>
+
+                <chart:SfChart.SecondaryAxis>
+
+                    <chart:NumericalAxis
+                        IsVisible="False"
+                        ShowMajorGridLines="False"
+                        ShowMinorGridLines="False"
+                        />
+
+                </chart:SfChart.SecondaryAxis>
+
+                <chart:SfChart.Series>
+
+                    <chart:ColumnSeries  
+                        StrokeWidth="6"
+                        CornerRadius="10"
+                        x:Name="chart"
+                        ItemsSource ="{Binding Data}" 
+                        XBindingPath="Date"
+	                    YBindingPath="Value"
+
+                        >
+
+                        <chart:ColumnSeries.YAxis>
+                            <chart:NumericalAxis
+                                Minimum="-25"
+                                Maximum="25"                                
+                                ShowMajorGridLines="False" 
+                                ShowMinorGridLines="False"/>
+                        </chart:ColumnSeries.YAxis>
+
+                        <chart:ColumnSeries.DataMarker>
+
+                            <chart:ChartDataMarker>
+
+                                <chart:ChartDataMarker.LabelStyle>
+
+                                    <chart:DataMarkerLabelStyle
+                                        LabelPosition="Auto"
+                                        Margin="0,12"
+                                        FontAttributes="Bold"
+                                        FontSize="11"
+                                        BackgroundColor="Transparent"
+                                        TextColor="Black" 
+                                        />
+
+                                </chart:ChartDataMarker.LabelStyle>
+
+                            </chart:ChartDataMarker>
+                        
+                        </chart:ColumnSeries.DataMarker>
+
+                    </chart:ColumnSeries>
+
+                </chart:SfChart.Series>
+
+            </chart:SfChart>
+            <!--<Grid
+                Grid.Row="1"
+                BackgroundColor="{DynamicResource BackgroundColorPage}"
+                >
+
+                --><!--<StackLayout
+                                Spacing="0"
+                                >
+
+                    <Grid
+                                    BackgroundColor="{DynamicResource PrimaryColor}"
+                                    Grid.Row="1"
+                                    RowSpacing="16"
+                                    VerticalOptions="Start"
+                                    Padding="16,0,16,16"
+                                    >
+
+                        <Frame
+                                        Grid.Row="0"
+                                        BackgroundColor="{DynamicResource AccentColor}"
+                                        CornerRadius="10"
+                                        Padding="0"
+                                        >
+
+                            <Grid
+                                            RowSpacing="0"
+                                            >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout
+                                                Grid.Row="0"
+                                                Padding="16"
+                                                VerticalOptions="Start"
+                                                >
+
+                                    <Label
+                                                    TextColor="{DynamicResource TextColorOfPrimaryColor}"
+                                                    Text="Total"
+                                                    FontSize="14"
+                                                    HorizontalOptions="Start"
+                                                    HorizontalTextAlignment="Start"
+                                                    VerticalOptions="Center"
+                                                    Opacity="0.8"
+                                                    />
+
+                                    <Label
+                                                    TextColor="{DynamicResource TextColorOfPrimaryColor}"
+                                                    Text="R$ 289.564,66"
+                                                    FontSize="22"
+                                                    HorizontalTextAlignment="Start"
+                                                    HorizontalOptions="Start"
+                                                    VerticalOptions="Center"
+                                                    />
+
+
+                                </StackLayout>
+
+                                <Grid
+                                                Grid.Row="1"
+                                                BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                                                Padding="16"
+                                                >
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout
+                                                    Grid.Column="0"
+                                                    Spacing="4"
+                                                    >
+
+                                        <Label
+                                                        TextColor="{DynamicResource DisabledTextColor}"
+                                                        FontFamily="{StaticResource MetropolisFontBold}"
+                                                        Text="- R$ 589,44"
+                                                        FontSize="16"
+                                                        HorizontalTextAlignment="Center"
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        />
+
+                                        <Label
+                                                        TextColor="{DynamicResource DisabledTextColor}"
+                                                        Text="Hoje"
+                                                        FontSize="12"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"
+                                                        VerticalOptions="Center"
+                                                        />
+
+                                    </StackLayout>
+
+                                    <Grid
+                                                    Grid.Column="1"
+                                                    WidthRequest="1"
+                                                    BackgroundColor="LightGray"
+                                                    Opacity="0.5"
+                                                    />
+
+                                    <StackLayout
+                                                    Grid.Column="2"
+                                                    Spacing="4"
+                                                    >
+
+                                        <Label
+                                                        TextColor="{DynamicResource AccentColor}"
+                                                        FontFamily="{StaticResource MetropolisFontBold}"
+                                                        Text="+ R$ 9.823,27"
+                                                        FontSize="16"
+                                                        HorizontalTextAlignment="Center"
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        />
+
+                                        <Label
+                                                        TextColor="{DynamicResource DisabledTextColor}"
+                                                        Text="Mês"
+                                                        FontSize="12"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"
+                                                        VerticalOptions="Center"
+                                                        />
+
+                                    </StackLayout>
+
+                                </Grid>
+
+                            </Grid>
+
+                        </Frame>
+
+                    </Grid>
+
+                    <Grid
+                                    Padding="16"
+                                    >
+
+                        <buttons:SfSegmentedControl 
+                                        x:Name="walletFilter"
+                                        CornerRadius="10"
+                                        VisibleSegmentsCount="3"
+                                        SelectedIndex="1"
+                                        FontSize="15"
+                                        FontColor="{DynamicResource PrimaryColor}"
+                                        FontFamily="{StaticResource MetropolisFontBold}"
+                                        >
+
+                            <buttons:SfSegmentedControl.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Saida</x:String>
+                                    <x:String>Tudo</x:String>
+                                    <x:String>Entrada</x:String>
+                                </x:Array>
+                            </buttons:SfSegmentedControl.ItemsSource>
+
+                        </buttons:SfSegmentedControl>
+
+                    </Grid>
+
+                </StackLayout>--><!--
+
+              
+
+            </Grid>-->
+            
+        </Grid>
+  
+    </ContentView.Content>
+    
+</ContentView>

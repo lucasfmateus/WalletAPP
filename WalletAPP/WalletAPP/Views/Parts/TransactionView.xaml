@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" 
+             xmlns:tabview="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms" 
+             xmlns:xforms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="WalletAPP.Views.Parts.TransactionView"
+             BackgroundColor="{StaticResource PrimaryColor}"
+             x:Name="transactionPage"
+             >
+
+    <ContentView.Content>
+
+        <Grid
+            RowSpacing="0"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Margin="16,0,0,0"
+                >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Text="Transactions"
+                    FontFamily="{StaticResource MetropolisFontBold}"
+                    TextColor="{DynamicResource TextColorOfPrimaryColor}"
+                    />
+
+                <tabview:SfTabView
+                    Grid.Column="1"
+                    x:Name="FilterTabView"                
+                    TabHeaderBackgroundColor="Transparent"
+                    TabHeight="50"
+                    EnableSwiping="False"
+                    VisibleHeaderCount="2"
+                    OverflowMode="Scroll"
+                    DisplayMode="Text"
+                    BackgroundColor="Transparent"
+                    Margin="0, 0"
+                    SelectedIndex="{Binding SelectedTab}"
+                    SelectionChanged="FilterTabView_SelectionChanged"
+                    >
+
+                    <tabview:SfTabView.SelectionIndicatorSettings>
+                        <tabview:SelectionIndicatorSettings
+                            Color="{DynamicResource SecondaryColor}" 
+                            Position="Bottom" 
+                            StrokeThickness="3"
+                            />
+                    </tabview:SfTabView.SelectionIndicatorSettings>
+
+                    <tabview:SfTabItem
+                        Title="Historico"
+                        TitleFontFamily="{StaticResource MetropolisFont}"
+                        TitleFontColor="{DynamicResource TextColorOfPrimaryColor}"
+                        SelectionColor="{DynamicResource TextColorOfPrimaryColor}" 
+                        />
+
+                    <tabview:SfTabItem
+                        Title="Extrato"
+                        TitleFontFamily="{StaticResource MetropolisFont}"
+                        TitleFontColor="{DynamicResource TextColorOfPrimaryColor}"
+                        SelectionColor="{DynamicResource TextColorOfPrimaryColor}"
+                        />
+
+                </tabview:SfTabView>
+
+            </Grid>
+
+            <StackLayout
+                Grid.Row="1"
+                BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                Spacing="0"
+                >
+
+                <Grid>
+
+                    <Grid
+                        HeightRequest="60"
+                        WidthRequest="140"
+                        >
+
+                        <Frame                            
+                            BackgroundColor="#1A000000"
+                            Padding="0"
+                            CornerRadius="26"
+                            HeightRequest="40"
+                            WidthRequest="140"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            />
+
+                    </Grid>
+
+                    <carousel:SfCarousel 
+                        x:Name="carousel"
+                        ItemsSource="{Binding FilterPeriodItemList}" 
+                        HeightRequest="60"
+                        ViewMode="Default"
+                        ItemHeight="40"
+                        ItemWidth="140"
+                        ScaleOffset="0.6"
+                        SelectedItemOffset="90"
+                        Offset="150"
+                        ItemSpacing="140"
+                        RotationAngle="45"
+                        SelectedIndex="{Binding SelectedItemIndex}"
+                        SelectionChanged="carousel_SelectionChanged"
+                        BackgroundColor="Transparent"
+                        >
+
+                        <carousel:SfCarousel.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <Grid>
+
+                                    <Frame                            
+                                        BackgroundColor="Transparent"
+                                        Padding="0"
+                                        CornerRadius="26"
+                                        >
+
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding .}"/>
+                                        </Frame.GestureRecognizers>
+
+                                        <Label 
+                                            Text="{Binding Label}" 
+                                            FontSize="15"
+                                            TextColor="{DynamicResource PrimaryColor}"
+                                            FontFamily="{StaticResource MetropolisFontBold}"
+                                            HorizontalTextAlignment="Center"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            />
+
+                                    </Frame>
+
+                                </Grid>
+
+                            </DataTemplate>
+
+                        </carousel:SfCarousel.ItemTemplate>
+
+                    </carousel:SfCarousel>
+
+                </Grid>
+
+                <Grid 
+                    BackgroundColor="LightGray" 
+                    HeightRequest="1"
+                    Opacity="0.5"
+                    />
+
+            </StackLayout>
+
+            <Grid
+                Grid.Row="2"
+                BackgroundColor="{DynamicResource BackgroundColorPage}"
+                >
+
+                <xforms:SfListView
+                    x:Name="listView"
+                    ItemsSource="{Binding Transactions}"
+                    AutoFitMode="DynamicHeight"
+                    ItemSpacing="0"
+                    SelectionMode="None"
+                    Padding="0"
+                    IsStickyFooter="False"
+                    FooterSize="150"
+                    >
+
+                    <xforms:SfListView.GroupHeaderTemplate>
+
+                        <DataTemplate 
+                            x:Name="GroupHeaderTemplate"
+                            >
+
+                            <Grid
+                                Padding="16,8,16,2"
+                                BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                                >
+
+                                <Label
+                                    Text="{Binding Key, StringFormat='{0:dd MMMM}'}"
+                                    TextColor="{DynamicResource DisabledTextColor}"
+                                    FontSize="14"
+                                    />
+
+                            </Grid>
+
+                        </DataTemplate>
+
+                    </xforms:SfListView.GroupHeaderTemplate>
+
+                    <xforms:SfListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <StackLayout
+                                Spacing="0"
+                                >
+
+                                <Grid
+                                    BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                                    Padding="16,10"
+                                    ColumnSpacing="16"
+                                    >
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <sfavatar:SfAvatarView 
+                                        ContentType="Default"
+                                        BorderColor="Transparent"
+                                        WidthRequest="36"
+                                        HeightRequest="36"
+                                        CornerRadius="100"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        BackgroundColor="{StaticResource AccentColor}"
+                                        >
+
+                                        <iconize:IconImage
+                                            Icon="mdi-shopping"
+                                            IconSize="24"
+                                            IconColor="{DynamicResource TextColorOfPrimaryColor}"
+                                            WidthRequest="22"
+                                            HeightRequest="22"
+                                            Aspect="AspectFill"
+                                            HorizontalOptions="Center"
+                                            />
+
+                                    </sfavatar:SfAvatarView>
+
+                                    <Grid
+                                        Grid.Column="1"
+                                        VerticalOptions="Center"
+                                        RowSpacing="4"
+                                        >
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid
+                                            Grid.Row="0"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="Center"
+                                            >
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label
+                                                Grid.Column="0"
+                                                TextColor="{DynamicResource PrimaryColorDark}"
+                                                Text="{Binding PartnerName}"
+                                                FontSize="16"
+                                                VerticalOptions="End"
+                                                HorizontalOptions="StartAndExpand"
+                                                />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                TextColor="{DynamicResource PrimaryColorDark}"
+                                                Text="{Binding Value, StringFormat='R$ -{0:F2}'}"
+                                                FontSize="18"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                />
+
+                                        </Grid>
+
+                                        <Grid
+                                            Grid.Row="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="Center"
+                                            >
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label
+                                                Grid.Column="0"
+                                                TextColor="{DynamicResource DisabledTextColor}"
+                                                Text="{Binding TransactionType}"
+                                                FontSize="10"
+                                                VerticalOptions="End"
+                                                HorizontalOptions="StartAndExpand"
+                                                />
+
+                                            <Label
+                                                Grid.Column="1"
+                                                TextColor="{DynamicResource DisabledTextColor}"
+                                                Text="{Binding PointsRedeemed, StringFormat='SD$ -{0}'}"
+                                                FontSize="12"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                />
+                                        </Grid>
+
+                                    </Grid>
+
+                                </Grid>
+
+                                <Grid 
+                                    BackgroundColor="LightGray" 
+                                    HeightRequest="1"
+                                    Opacity="0.5"
+                                    />
+
+                            </StackLayout>
+
+                        </DataTemplate>
+
+                    </xforms:SfListView.ItemTemplate>
+
+                    <xforms:SfListView.FooterTemplate>
+
+                        <DataTemplate>
+
+                            <StackLayout
+                                Margin="0,16,0,64"
+                                Padding="0,16"
+                                BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                                Spacing="16"
+                                >
+
+                                <Grid
+                                    Padding="16,0"
+                                    >
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout
+                                        Grid.Column="0"
+                                        Spacing="4"
+                                        >
+
+                                        <Label
+                                            TextColor="{DynamicResource AccentColor}"
+                                            FontFamily="{StaticResource MetropolisFontBold}"
+                                            Text="32"
+                                            FontSize="16"
+                                            HorizontalTextAlignment="Center"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            />
+
+                                        <Label
+                                            TextColor="{DynamicResource DisabledTextColor}"
+                                            Text="Transações"
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalOptions="Center"
+                                            />
+
+                                    </StackLayout>
+                                    
+                                    <StackLayout
+                                        Grid.Column="1"
+                                        Spacing="4"
+                                        >
+
+                                        <Label
+                                            TextColor="#FFF50057"
+                                            FontFamily="{StaticResource MetropolisFontBold}"
+                                            Text="110.000,00"
+                                            FontSize="16"
+                                            HorizontalTextAlignment="Center"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            />
+
+                                        <Label
+                                            TextColor="{DynamicResource DisabledTextColor}"
+                                            Text="Valor Gasto - R$"
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalOptions="Center"
+                                            />
+
+                                    </StackLayout>
+
+                                </Grid>
+                                
+                                <Grid 
+                                    BackgroundColor="LightGray" 
+                                    HeightRequest="1"
+                                    Opacity="0.5"
+                                    />
+
+                                <Grid
+                                    Padding="16,0"
+                                    >
+                                    
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout
+                                        Grid.Column="0"
+                                        Spacing="4"
+                                        >
+
+                                        <Label
+                                            TextColor="{DynamicResource AccentColor}"
+                                            FontFamily="{StaticResource MetropolisFontBold}"
+                                            Text="10.000"
+                                            FontSize="16"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalOptions="Center"
+                                            />
+
+                                        <Label
+                                            TextColor="{DynamicResource DisabledTextColor}"
+                                            Text="Seed acumulados"
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            />
+                                        
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Column="1"
+                                        Spacing="4"
+                                        >
+
+                                        <Label
+                                            TextColor="#FFF50057"
+                                            FontFamily="{StaticResource MetropolisFontBold}"
+                                            Text="1.000"
+                                            FontSize="16"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            />
+
+                                        <Label
+                                            TextColor="{DynamicResource DisabledTextColor}"
+                                            Text="Seed Gasto"
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            />
+
+                                    </StackLayout>
+                                    
+                                </Grid>
+
+                            </StackLayout>
+
+                        </DataTemplate>
+                        
+                    </xforms:SfListView.FooterTemplate>
+                
+                </xforms:SfListView>
+
+            </Grid>
+            
+        </Grid>
+   
+    </ContentView.Content>
+    
+</ContentView>

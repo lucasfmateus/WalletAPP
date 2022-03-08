@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gem:GemApp  xmlns:gem="clr-namespace:Gem;assembly=Gem"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:converters="clr-namespace:WalletAPP.Converters"
+             x:Class="WalletAPP.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converters:BooleanInverter x:Key="BooleanInverter"/>
+            <converters:ListItemSeparetorConverter x:Key="ListItemSeparetorConverter"></converters:ListItemSeparetorConverter>
+            <converters:SfListSeparetorConverter x:Key="SfListSeparetorConverter"></converters:SfListSeparetorConverter>
+            <converters:FundsValueConverter x:Key="FundsValueConverter"></converters:FundsValueConverter>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="MetropolisFontItalic">
+                <On Platform="Android" Value="MetropolisRegularItalic.otf#Italic" />
+                <On Platform="iOS" Value="Metropolis Italic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="MetropolisFontBold">
+                <On Platform="Android" Value="MetropolisBold.otf#Bold" />
+                <On Platform="iOS" Value="Metropolis Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="MetropolisFont">
+                <On Platform="iOS" Value="Metropolis-Regular" />
+                <On Platform="Android" Value="MetropolisRegular.otf#Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="materialDesignFont" iOS="Material Design Icons" Android="iconize-materialdesignicons.ttf" />
+            <OnPlatform x:TypeArguments="x:String" x:Key="materialFont" iOS="Material Icons" Android="iconize-material.ttf" />
+            <OnPlatform x:TypeArguments="x:String" x:Key="jamIcons" iOS="Jam-icons" Android="iconize-jam-icons.ttf" />
+            
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource MetropolisFont}" />
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</gem:GemApp>

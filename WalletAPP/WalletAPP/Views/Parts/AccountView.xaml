@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" 
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="WalletAPP.Views.Parts.AccountView"
+             >
+    <ContentView.Content>
+        
+        <Grid
+            RowSpacing="0"
+            >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="0"
+                BackgroundColor="{DynamicResource PrimaryColor}"      
+                VerticalOptions="Start"              
+                Padding="16"
+                RowSpacing="16"
+                >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <sfavatar:SfAvatarView   
+                    Grid.Row="0"
+                    ContentType="Default"
+                    BorderColor="{DynamicResource DisabledTextColor}"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
+                    CornerRadius="100"
+                    IsClippedToBounds="True"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    >
+
+                    <Image
+                        Background="White"
+                        Source="https://i.imgur.com/lwQRi9e.png"
+                        Aspect="AspectFill"
+                        HorizontalOptions="Center"
+                        />
+
+                </sfavatar:SfAvatarView>
+
+                <Label
+                    Grid.Row="1"
+                    Text="Lucas Mateus"
+                    FontSize="20"
+                    TextColor="{DynamicResource BackgroundColorAppBar}"
+                    FontFamily="{StaticResource MetropolisFontBold}"
+                    VerticalOptions="Start"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    />
+
+            </Grid>
+            
+            <Grid 
+                Grid.Row="1" 
+                BackgroundColor="{DynamicResource BackgroundColorPage}"
+                RowSpacing="0"
+                VerticalOptions="FillAndExpand"
+                >
+
+                <StackLayout
+                    Padding="16"
+                    Spacing="16"
+                    >
+
+                    <Frame
+                        Padding="16"
+                        BackgroundColor="{DynamicResource BackgroundColorAppBar}"  
+                        CornerRadius="8"
+                        VerticalOptions="Start"
+                        >
+
+                        <StackLayout
+                            Spacing="16"
+                            >
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <iconize:IconImage
+                                    Grid.Column="0"
+                                    Icon="mdi-account-settings"
+                                    IconSize="24"
+                                    IconColor="{DynamicResource PrimaryColor}"
+                                    WidthRequest="24"
+                                    HeightRequest="24"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Start"
+                                    />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Dados da conta"
+                                    FontSize="16"
+                                    TextColor="{DynamicResource SecondaryTextColor}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Center"
+                                    />
+
+                            </Grid>
+
+                            <Grid 
+                                BackgroundColor="LightGray"
+                                HeightRequest="1"
+                                />
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <iconize:IconImage
+                                    Grid.Column="0"
+                                    Icon="mdi-cash-refund"
+                                    IconSize="24"
+                                    IconColor="{DynamicResource PrimaryColor}"
+                                    WidthRequest="24"
+                                    HeightRequest="24"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Start"
+                                    />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Solicitação de pontos"
+                                    FontSize="16"
+                                    TextColor="{DynamicResource SecondaryTextColor}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Center"
+                                    />
+
+                            </Grid>
+
+                        </StackLayout>
+
+                    </Frame>
+
+
+                    <Frame
+                        Padding="16"
+                        BackgroundColor="{DynamicResource BackgroundColorAppBar}"  
+                        CornerRadius="8"
+                        VerticalOptions="Start"
+                        >
+
+                        <StackLayout
+                            Spacing="16"
+                            >
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <iconize:IconImage
+                                    Grid.Column="0"
+                                    Icon="mdi-script-text"
+                                    IconSize="24"
+                                    IconColor="{DynamicResource PrimaryColor}"
+                                    WidthRequest="24"
+                                    HeightRequest="24"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Start"
+                                    />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="O programa"
+                                    FontSize="16"
+                                    TextColor="{DynamicResource SecondaryTextColor}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Center"
+                                    />
+
+                            </Grid>
+
+                            <Grid 
+                                BackgroundColor="LightGray"
+                                HeightRequest="1"
+                                />
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <iconize:IconImage
+                                    Grid.Column="0"
+                                    Icon="mdi-script-text"
+                                    IconSize="24"
+                                    IconColor="{DynamicResource PrimaryColor}"
+                                    WidthRequest="24"
+                                    HeightRequest="24"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Start"
+                                    />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Regulamento"
+                                    FontSize="16"
+                                    TextColor="{DynamicResource SecondaryTextColor}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Center"
+                                    />
+
+                            </Grid>
+
+                            <Grid 
+                                BackgroundColor="LightGray" 
+                                HeightRequest="1"
+                                />
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <iconize:IconImage
+                                    Grid.Column="0"
+                                    Icon="mdi-contacts"
+                                    IconSize="24"
+                                    IconColor="{DynamicResource PrimaryColor}"
+                                    WidthRequest="24"
+                                    HeightRequest="24"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Start"
+                                    />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Contatos"
+                                    FontSize="16"
+                                    TextColor="{DynamicResource SecondaryTextColor}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Center"
+                                    />
+
+                            </Grid>
+
+                        </StackLayout>
+
+                    </Frame>
+
+                </StackLayout>
+                
+            </Grid>
+            
+        </Grid>
+        
+    </ContentView.Content>
+    
+</ContentView>

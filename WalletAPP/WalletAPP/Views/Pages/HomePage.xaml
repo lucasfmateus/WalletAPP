@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WalletAPP.Views.Pages.HomePage"
+             xmlns:tabview="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             xmlns:parts="clr-namespace:WalletAPP.Views.Parts"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             >
+    
+    <NavigationPage.TitleView>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Padding="0"
+            ColumnSpacing="12"
+            >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        
+        <Grid>
+
+            <tabview:SfTabView
+                x:Name="homeTabView"
+                IsVisible="{Binding IsLoading, Converter={StaticResource BooleanInverter}}"
+                TabHeaderPosition="Bottom"
+                BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                TabHeaderBackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                TabHeight="50"
+                OverflowMode="CenterButton"
+                DisplayMode="Image"
+                VisibleHeaderCount="4"
+                SelectedIndex="{Binding SelectedTab, Mode=TwoWay}"
+                EnableSwiping="False"
+                Focused="HomeTabView_Focused"
+                Unfocused="Unfocused"
+                SelectionChanged="HomeTabView_SelectionChanged"
+                >
+
+                <tabview:SfTabView.SelectionIndicatorSettings>
+                    <tabview:SelectionIndicatorSettings Color="Transparent"/>
+                </tabview:SfTabView.SelectionIndicatorSettings>
+
+                <tabview:SfTabItem
+                    x:Name="tabItemDashboard"
+                    IconFont=""
+                    FontIconFontSize="28"
+                    FontIconFontColor="{DynamicResource DisabledTextColor}"
+                    SelectionColor="{DynamicResource PrimaryColor}"
+                    FontIconFontFamily="{StaticResource materialDesignFont}"
+                    >
+
+                    <tabview:SfTabItem.Content>
+                        <Grid BackgroundColor="{DynamicResource BackgroundColorPage}" Padding="0">
+                            <parts:DashboardView BindingContext="{Binding DashboardVM}"></parts:DashboardView>
+                        </Grid>
+                    </tabview:SfTabItem.Content>
+
+                </tabview:SfTabItem>
+
+                <tabview:SfTabItem
+                    x:Name="transaction"
+                    IconFont="ﮩ"
+                    FontIconFontSize="28"
+                    FontIconFontColor="{DynamicResource DisabledTextColor}"
+                    SelectionColor="{DynamicResource PrimaryColor}"
+                    FontIconFontFamily="{StaticResource materialDesignFont}"
+                    >
+
+                    <tabview:SfTabItem.Content>
+                        <Grid BackgroundColor="{DynamicResource BackgroundColorPage}" Padding="0">
+                            <parts:TransactionView BindingContext="{Binding TransactionVM}"></parts:TransactionView>
+                        </Grid>
+                    </tabview:SfTabItem.Content>
+
+                </tabview:SfTabItem>
+                
+                <tabview:SfTabItem
+                    x:Name="wallet"
+                    IconFont=""
+                    FontIconFontSize="28"
+                    FontIconFontColor="{DynamicResource DisabledTextColor}"
+                    SelectionColor="{DynamicResource PrimaryColor}"
+                    FontIconFontFamily="{StaticResource materialDesignFont}"
+                    >
+
+                    <tabview:SfTabItem.Content>
+                        <Grid BackgroundColor="{DynamicResource BackgroundColorPage}" Padding="0">
+                            <parts:WalletView BindingContext="{Binding ChartsVM}"></parts:WalletView>
+                        </Grid>
+                    </tabview:SfTabItem.Content>
+
+                </tabview:SfTabItem>
+                
+                <tabview:SfTabItem
+                    x:Name="perfil"
+                    IconFont=""
+                    FontIconFontSize="28"
+                    FontIconFontColor="{DynamicResource DisabledTextColor}"
+                    SelectionColor="{DynamicResource PrimaryColor}"
+                    FontIconFontFamily="{StaticResource materialDesignFont}"
+                    >
+
+                    <tabview:SfTabItem.Content>
+                        <Grid BackgroundColor="{DynamicResource BackgroundColorPage}" Padding="0">
+                            <parts:AccountView BindingContext="{Binding DashboardVM}"></parts:AccountView>
+                        </Grid>
+                    </tabview:SfTabItem.Content>
+
+                </tabview:SfTabItem>
+
+                <tabview:SfTabView.CenterButtonSettings>
+                    <tabview:CenterButtonSettings 
+                        Height="50" 
+                        Width="72"
+                        >
+                    </tabview:CenterButtonSettings>
+                </tabview:SfTabView.CenterButtonSettings>
+
+                <tabview:SfTabView.CenterButtonView>
+
+                    <Grid>
+                        
+                        <Frame
+                            CornerRadius="26"
+                            Padding="0"
+                            HeightRequest="40"
+                            WidthRequest="68"
+                            BackgroundColor="{DynamicResource PrimaryColor}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            >
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding QRPayment}"/>
+                            </Frame.GestureRecognizers>
+
+                            <iconize:IconImage 
+                                Margin="0"
+                                Icon="mdi-currency-usd"
+                                IconColor="{DynamicResource TextColorOfPrimaryColor}"
+                                IconSize="32"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand"
+                                />
+
+                        </Frame>
+
+                    </Grid>
+                </tabview:SfTabView.CenterButtonView>
+                
+            </tabview:SfTabView>
+            
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
