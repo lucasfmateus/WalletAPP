@@ -36,7 +36,7 @@ namespace WalletAPP.Converters
         }
     }
 
-    public class SfListSeparetorConverter: IValueConverter
+    public class SfListNotificationSeparetorConverter: IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -46,7 +46,7 @@ namespace WalletAPP.Converters
                 return false;
             }
 
-            var itemData = value as Transaction;
+            var itemData = value as Notification;
 
             var items = GetGroup(itemData, parameter as SfListView);
             
@@ -64,11 +64,11 @@ namespace WalletAPP.Converters
             throw new NotImplementedException();
         }
 
-        private List<Transaction> GetGroup(Transaction itemData, SfListView list)
+        private List<Notification> GetGroup(Notification itemData, SfListView list)
         {
             foreach (var item in list.DataSource.Groups)
             {
-                var items = item.Items.ToList<Transaction>().ToList();
+                var items = item.Items.ToList<Notification>().ToList();
 
                 if (items.Any(x => x.Id == itemData.Id))
                 {
@@ -76,7 +76,7 @@ namespace WalletAPP.Converters
                 }
             }
 
-            return list.DataSource.DisplayItems.ToList<Transaction>().ToList();
+            return list.DataSource.DisplayItems.ToList<Notification>().ToList();
         }
     }
 }

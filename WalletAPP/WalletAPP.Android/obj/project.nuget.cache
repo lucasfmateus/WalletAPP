@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jPfMWvLrhqTeCH+mOJYwO4yRj77NLuH5rn0MRj9nL89u3oEETQlnimwsJInQMiFcJGELuSw6mEydPiHVdWNHQg==",
+  "dgSpecHash": "JYpszm86OlNWAvwt8Fd9KBYgUFn0CvpqT1By4IEbbvRutwIU0SPOmvRhkctwFMvWx+5PvyJGBxJYXsG9+cHvJg==",
   "success": true,
   "projectFilePath": "D:\\GIT\\WalletAPP\\WalletAPP\\WalletAPP.Android\\WalletAPP.Android.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\mateu\\.nuget\\packages\\syncfusion.xamarin.sfcarousel\\17.4.0.41\\syncfusion.xamarin.sfcarousel.17.4.0.41.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\syncfusion.xamarin.sfchart\\17.4.0.41\\syncfusion.xamarin.sfchart.17.4.0.41.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\syncfusion.xamarin.sflistview\\17.4.0.41\\syncfusion.xamarin.sflistview.17.4.0.41.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\syncfusion.xamarin.sfnavigationdrawer\\17.4.0.41\\syncfusion.xamarin.sfnavigationdrawer.17.4.0.41.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\syncfusion.xamarin.sfpopuplayout\\17.4.0.41\\syncfusion.xamarin.sfpopuplayout.17.4.0.41.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\syncfusion.xamarin.sftabview\\17.4.0.41\\syncfusion.xamarin.sftabview.17.4.0.41.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",

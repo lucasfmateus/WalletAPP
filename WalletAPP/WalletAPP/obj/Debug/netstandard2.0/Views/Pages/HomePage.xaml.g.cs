@@ -17,6 +17,9 @@ namespace WalletAPP.Views.Pages {
     public partial class HomePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Syncfusion.SfNavigationDrawer.XForms.SfNavigationDrawer navigationDrawer;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Syncfusion.XForms.TabView.SfTabView homeTabView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -34,6 +37,7 @@ namespace WalletAPP.Views.Pages {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(HomePage));
+            navigationDrawer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfNavigationDrawer.XForms.SfNavigationDrawer>(this, "navigationDrawer");
             homeTabView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.TabView.SfTabView>(this, "homeTabView");
             tabItemDashboard = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.TabView.SfTabItem>(this, "tabItemDashboard");
             transaction = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.XForms.TabView.SfTabItem>(this, "transaction");

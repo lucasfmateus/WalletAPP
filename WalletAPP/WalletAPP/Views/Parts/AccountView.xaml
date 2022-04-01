@@ -142,7 +142,7 @@
 
                                 <Label
                                     Grid.Column="1"
-                                    Text="Solicitação de pontos"
+                                    Text="Resgate de pontos"
                                     FontSize="16"
                                     TextColor="{DynamicResource SecondaryTextColor}"
                                     VerticalOptions="Center"
@@ -258,7 +258,7 @@
 
                                 <Label
                                     Grid.Column="1"
-                                    Text="Contatos"
+                                    Text="Fale conosco"
                                     FontSize="16"
                                     TextColor="{DynamicResource SecondaryTextColor}"
                                     VerticalOptions="Center"

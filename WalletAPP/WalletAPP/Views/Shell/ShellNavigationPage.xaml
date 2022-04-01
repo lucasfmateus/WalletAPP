@@ -6,4 +6,5 @@
             BarTextColor="White"
             BarBackgroundColor="{DynamicResource PrimaryColor}"
             x:Class="WalletAPP.Views.Shell.ShellNavigationPage"
+            NavigationPage.HasNavigationBar="False"
             />

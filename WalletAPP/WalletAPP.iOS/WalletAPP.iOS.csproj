@@ -152,6 +152,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
       <Version>17.4.0.41</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer">
+      <Version>17.4.0.41</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
       <Version>17.4.0.41</Version>
     </PackageReference>

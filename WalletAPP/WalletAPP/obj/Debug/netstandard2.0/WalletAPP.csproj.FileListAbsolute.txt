@@ -1,6 +1,5 @@
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\bin\Debug\netstandard2.0\WalletAPP.deps.json
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\bin\Debug\netstandard2.0\WalletAPP.dll
-D:\GIT\WalletAPP\WalletAPP\WalletAPP\bin\Debug\netstandard2.0\ref\WalletAPP.dll
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\bin\Debug\netstandard2.0\WalletAPP.pdb
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\WalletAPP.GeneratedMSBuildEditorConfig.editorconfig
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\App.xaml.g.cs
@@ -19,3 +18,6 @@ D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\XamlC.stamp
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\WalletAPP.dll
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\ref\WalletAPP.dll
 D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\WalletAPP.pdb
+D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\WalletAPP.csproj.AssemblyReference.cache
+D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\refint\WalletAPP.dll
+D:\GIT\WalletAPP\WalletAPP\WalletAPP\obj\Debug\netstandard2.0\Views\Parts\NotificationView.xaml.g.cs

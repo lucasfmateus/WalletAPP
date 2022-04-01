@@ -8,7 +8,6 @@ using Plugin.Iconize;
 using Prism;
 using Prism.AppModel;
 using Prism.Ioc;
-using Prism.Mvvm;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -84,7 +83,8 @@ namespace WalletAPP
         {
             try
             {
-                await NavigationService.NavigateAsync("app:///" + nameof(HomePage));
+                //await NavigationService.NavigateAsync("app:///" + nameof(HomePage));
+                await NavigationService.NavigateAsync("app:///" + nameof(ShellNavigationPage) + "/" + nameof(HomePage));
             }
             catch (System.Exception ex)
             {

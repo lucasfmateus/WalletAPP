@@ -399,6 +399,19 @@
           "lib/netstandard2.0/Syncfusion.SfListView.XForms.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfNavigationDrawer/17.4.0.41": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "17.4.0.41",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfPopupLayout/17.4.0.41": {
         "type": "package",
         "dependencies": {
@@ -1312,6 +1325,35 @@
         "syncfusion.xamarin.sflistview.nuspec"
       ]
     },
+    "Syncfusion.Xamarin.SfNavigationDrawer/17.4.0.41": {
+      "sha512": "eoB9rhYVleGWJq11jNxIlnOiunkkpyLGFMYbCnTQrq5gTiCZ3iFjPiUXpV7Vsb+Lx5qW1Wf5RSD8eqYPOXvYdw==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfnavigationdrawer/17.4.0.41",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.Android.xml",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNavigationDrawer.iOS.xml",
+        "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfNavigationDrawer.XForms.xml",
+        "syncfusion.xamarin.sfnavigationdrawer.17.4.0.41.nupkg.sha512",
+        "syncfusion.xamarin.sfnavigationdrawer.nuspec"
+      ]
+    },
     "Syncfusion.Xamarin.SfPopupLayout/17.4.0.41": {
       "sha512": "zjqYNTwdBWBEXoWYgmFYMuOKKPszpo8xqp1ynIMDRxdU5X/Gwey6wjRFl45Bn2Dq/u19WPPG6bLP3E3LABv15g==",
       "type": "package",
@@ -2194,6 +2236,7 @@
       "Syncfusion.Xamarin.SfCarousel >= 17.4.0.41",
       "Syncfusion.Xamarin.SfChart >= 17.4.0.41",
       "Syncfusion.Xamarin.SfListView >= 17.4.0.41",
+      "Syncfusion.Xamarin.SfNavigationDrawer >= 17.4.0.41",
       "Syncfusion.Xamarin.SfPopupLayout >= 17.4.0.41",
       "Syncfusion.Xamarin.SfTabView >= 17.4.0.41",
       "Xam.Plugin.Iconize >= 3.5.0.129",
@@ -2281,6 +2324,10 @@
             "target": "Package",
             "version": "[17.4.0.41, )"
           },
+          "Syncfusion.Xamarin.SfNavigationDrawer": {
+            "target": "Package",
+            "version": "[17.4.0.41, )"
+          },
           "Syncfusion.Xamarin.SfPopupLayout": {
             "target": "Package",
             "version": "[17.4.0.41, )"
@@ -2336,7 +2383,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

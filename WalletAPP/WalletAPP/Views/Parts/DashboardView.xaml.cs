@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism.Events;
+using WalletAPP.Views.Pages;
 
 namespace WalletAPP.Views.Parts
 {
@@ -18,6 +20,7 @@ namespace WalletAPP.Views.Parts
     public partial class DashboardView : ContentView
     {
         private DashboardViewModel Vm => BindingContext as DashboardViewModel;
+
         public DashboardView()
         {
             InitializeComponent();
@@ -28,7 +31,8 @@ namespace WalletAPP.Views.Parts
             var iconImage = sender as IconImage;
             iconImage.Icon = iconImage.Icon  == "mdi-eye-off-outline" ? "mdi-eye-outline" : "mdi-eye-off-outline";
         }
-        private void CarouselViewContent_SizeChanged(System.Object sender, System.EventArgs e) 
+
+        private void CarouselViewContent_SizeChanged(object sender, EventArgs e) 
         { 
             var contentSize = ((VisualElement)sender).Height; 
             if (contentSize > banner.HeightRequest) 
@@ -37,6 +41,10 @@ namespace WalletAPP.Views.Parts
             } 
         }
 
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Vm.EventAggregator.GetEvent<NavigationDrawerStatusChanged>().Publish();
+        }
     }
 
 
@@ -113,7 +121,6 @@ namespace WalletAPP.Views.Parts
             get { return _funds; }
             set { SetProperty(ref _funds, value); }
         }
-
 
         #endregion
     }

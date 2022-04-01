@@ -46,22 +46,28 @@ application_config:
 	.byte	0
 	/* have_runtime_config_blob */
 	.byte	0
+	/* have_assembly_store */
+	.byte	0
 	/* bound_exception_type */
 	.byte	1
 	/* package_naming_policy */
-	.zero	3
+	.zero	2
 	.long	3
 	/* environment_variable_count */
 	.long	12
 	/* system_property_count */
 	.long	0
 	/* number_of_assemblies_in_apk */
-	.long	195
+	.long	198
 	/* bundled_assembly_name_width */
 	.long	70
+	/* number_of_assembly_store_files */
+	.long	2
+	/* mono_components_mask */
+	.long	0
 	/* android_package_name */
 	.long	.L.env.str.1
-	.size	application_config, 36
+	.size	application_config, 44
 	.section	.rodata.env.str.2,"aMS",%progbits,1
 	.type	.L.env.str.2, %object
 .L.env.str.2:
@@ -99,7 +105,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",%progbits,1
 	.type	.L.env.str.8, %object
 .L.env.str.8:
-	.asciz	"e4d0b586-31cf-405d-911f-93e74a0e8f70"
+	.asciz	"3800a731-d5fe-4dc1-8533-8e4eb8bd1955"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",%progbits,1
 	.type	.L.env.str.9, %object
@@ -155,6 +161,7 @@ app_environment_variables:
 	.global	app_system_properties
 app_system_properties:
 	.size	app_system_properties, 0
+
 	/* Bundled assembly name buffers, all 70 bytes long */
 	.section	.bss.bundled_assembly_names,"aw",%nobits
 .L.env.buf.1:
@@ -547,6 +554,13 @@ app_system_properties:
 	.zero	70
 .L.env.buf.195:
 	.zero	70
+.L.env.buf.196:
+	.zero	70
+.L.env.buf.197:
+	.zero	70
+.L.env.buf.198:
+	.zero	70
+
 	/* Bundled assemblies data */
 	.section	.data.bundled_assemblies,"aw",%progbits
 	.type	bundled_assemblies, %object
@@ -3088,4 +3102,58 @@ bundled_assemblies:
 	/* name */
 	.long	.L.env.buf.195
 
-	.size	bundled_assemblies, 4680
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.long	0
+	/* name_length */
+	.long	0
+	/* name */
+	.long	.L.env.buf.196
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.long	0
+	/* name_length */
+	.long	0
+	/* name */
+	.long	.L.env.buf.197
+
+	/* apk_fd */
+	.long	-1
+	/* data_offset */
+	.long	0
+	/* data_size */
+	.long	0
+	/* data */
+	.long	0
+	/* name_length */
+	.long	0
+	/* name */
+	.long	.L.env.buf.198
+
+	.size	bundled_assemblies, 4752
+
+
+	/* Assembly store individual assembly data */
+	.section	.data.assembly_store_bundled_assemblies,"aw",%progbits
+	.type	assembly_store_bundled_assemblies, %object
+	.p2align	2
+	.global	assembly_store_bundled_assemblies
+assembly_store_bundled_assemblies:
+
+	/* Assembly store data */
+	.section	.data.assembly_stores,"aw",%progbits
+	.type	assembly_stores, %object
+	.p2align	2
+	.global	assembly_stores
+assembly_stores:

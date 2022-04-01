@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism.Events;
 
 namespace WalletAPP.Views.Pages
 {
@@ -17,9 +18,15 @@ namespace WalletAPP.Views.Pages
     public partial class HomePage : ContentPage
     {
         public HomeViewModel Vm => (HomeViewModel)BindingContext;
+
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        void NavigationDrawer()
+        {
+            navigationDrawer.ToggleDrawer();
         }
 
         protected override void OnBindingContextChanged()
@@ -28,6 +35,7 @@ namespace WalletAPP.Views.Pages
 
             if (Vm != null)
             {
+                Vm.EventAggregator?.GetEvent<NavigationDrawerStatusChanged>().Subscribe(NavigationDrawer, ThreadOption.UIThread);
                 //homeTabView.SelectionChanged += HomeTabView_SelectionChanged;
             }
         }
@@ -54,11 +62,18 @@ namespace WalletAPP.Views.Pages
     public class HomeViewModel : ViewModelBase
     {
         #region Services
-        public HomeViewModel(ViewModelBaseServices viewModelBaseServices, DashboardViewModel dashboardViewModel, TransactionViewModel transactionViewModel, WalletViewModel chartsVM) : base(viewModelBaseServices)
+        public HomeViewModel(
+            ViewModelBaseServices viewModelBaseServices, 
+            DashboardViewModel dashboardViewModel, 
+            TransactionViewModel transactionViewModel,
+            WalletViewModel chartsVM, 
+            NotificationViewModel notificationVM
+            ) : base(viewModelBaseServices)
         {
             DashboardVM = dashboardViewModel;
             ChartsVM = chartsVM;
             TransactionVM = transactionViewModel;
+            NotificationVM = notificationVM;
         }
         #endregion
 
@@ -76,6 +91,10 @@ namespace WalletAPP.Views.Pages
 
         public async Task LoadTab()
         {
+            await DashboardVM.Load();
+            await TransactionVM.Load();
+            await ChartsVM.Load();
+            await NotificationVM.Load();
 
             //switch (SelectedTab)
             //{
@@ -88,11 +107,6 @@ namespace WalletAPP.Views.Pages
             //    default:
             //        break;
             //}
-            //
-
-            await DashboardVM.Load();
-            await TransactionVM.Load();
-            await ChartsVM.Load();
         }
 
         //public Command QRPayment => new Command(async () =>
@@ -141,6 +155,13 @@ namespace WalletAPP.Views.Pages
             set { SetProperty(ref _chartsVM, value); }
         }
 
+        private NotificationViewModel _notificationVM;
+        public NotificationViewModel NotificationVM
+        {
+            get { return _notificationVM; }
+            set { SetProperty(ref _notificationVM, value); }
+        }
+
         private bool _isLoading = false;
         public bool IsLoading
         {
@@ -150,4 +171,9 @@ namespace WalletAPP.Views.Pages
 
         #endregion
     }
+
+    public class NavigationDrawerStatusChanged : PubSubEvent
+    {
+    }
+
 }

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xforms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="WalletAPP.Views.Parts.NotificationView"
+             >
+    
+    <ContentView.Content>
+
+        <xforms:SfListView
+            x:Name="listView"
+            ItemsSource="{Binding Notifications}"
+            AutoFitMode="DynamicHeight"
+            VerticalOptions="StartAndExpand"
+            BackgroundColor="White"
+            SelectionMode="None"
+            Margin="0"
+            ColumnSpacing="0"
+            ItemSpacing="0"
+            >
+
+            <xforms:SfListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <StackLayout>
+                        
+                        <Grid
+                            HeightRequest="100"
+                            Padding="16"
+                            ColumnSpacing="8"
+                            RowSpacing="8"
+                            >
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                        
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="5*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Source="{Binding IconUri}"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Aspect="AspectFit"
+                                />
+
+                            <StackLayout
+                                Grid.Row="0"
+                                Spacing="0"
+                                Grid.Column="1"
+                                VerticalOptions="CenterAndExpand"
+                                >
+                                
+                                <Label
+                                    Text="{Binding Title}"
+                                    FontSize="14"
+                                    TextColor="Black"
+                                    FontFamily="{StaticResource MetropolisFontBold}"
+                                    />       
+                                
+                                <Label
+                                    Text="{Binding Date, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                    FontSize="10"
+                                    TextColor="LightGray"
+                                    FontAttributes="Bold"
+                                    FontFamily="{StaticResource MetropolisFont}"
+                                    />
+                                
+                            </StackLayout>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding Resume}"
+                                FontSize="12"
+                                TextColor="DarkGray"
+                                FontFamily="{StaticResource MetropolisFont}"
+                                />
+
+                        </Grid>
+
+                        <Grid 
+                            IsVisible="{Binding .,Converter={StaticResource SfListNotificationSeparetorConverter}, ConverterParameter={x:Reference Name=listView}}" 
+                            BackgroundColor="LightGray" 
+                            HeightRequest="1"
+                            />
+
+                    </StackLayout>
+                    
+                </DataTemplate>
+
+            </xforms:SfListView.ItemTemplate>
+
+        </xforms:SfListView>
+
+    </ContentView.Content>
+</ContentView>

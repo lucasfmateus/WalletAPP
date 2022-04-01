@@ -74,6 +74,10 @@
               "target": "Package",
               "version": "[17.4.0.41, )"
             },
+            "Syncfusion.Xamarin.SfNavigationDrawer": {
+              "target": "Package",
+              "version": "[17.4.0.41, )"
+            },
             "Syncfusion.Xamarin.SfPopupLayout": {
               "target": "Package",
               "version": "[17.4.0.41, )"
@@ -129,7 +133,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

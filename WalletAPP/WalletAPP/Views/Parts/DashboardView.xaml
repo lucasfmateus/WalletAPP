@@ -4,7 +4,7 @@
              xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" 
              xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize" 
-             xmlns:xforms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:xforms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
              x:Class="WalletAPP.Views.Parts.DashboardView"
              x:Name="dash"
              >
@@ -125,6 +125,10 @@
                         Padding="10"
                         >
 
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
+
                         <iconize:IconImage
                             Icon="mdi-bell"
                             IconSize="24"
@@ -149,8 +153,8 @@
                     >
 
                     <StackLayout
-                        BindableLayout.ItemsSource="{Binding Funds}"
                         x:Name="listView"
+                        BindableLayout.ItemsSource="{Binding Funds}"
                         VerticalOptions="Start"
                         Margin="0"
                         >
@@ -225,11 +229,13 @@
                                             >
 
                                             <iconize:IconImage.GestureRecognizers>
+
                                                 <TapGestureRecognizer
                                                     Command="{Binding Source={x:Reference dash}, Path=BindingContext.CommandChange}"
                                                     CommandParameter="{x:Reference Name=totalValue}"
                                                     Tapped="Tapped_ChangeVisibility"
                                                     />
+
                                             </iconize:IconImage.GestureRecognizers>
 
                                         </iconize:IconImage>
@@ -322,7 +328,9 @@
                             >
 
                             <IndicatorView.IndicatorTemplate>
+
                                 <DataTemplate>
+
                                     <Frame
                                         HasShadow="False"   
                                         Padding="0"
@@ -330,8 +338,11 @@
                                         WidthRequest="8"
                                         Style="{StaticResource IndicatorLabelStyle}"
                                         />
+
                                 </DataTemplate>
+
                             </IndicatorView.IndicatorTemplate>
+
                         </IndicatorView>
 
                     </Grid>
@@ -395,10 +406,13 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Center"
                                 />
+
                         </Grid>
+
                     </Grid>
 
                 </Grid>
+
             </Frame>
 
         </Grid>

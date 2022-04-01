@@ -31,56 +31,9 @@ namespace WalletAPP.Views.Parts
 
         public override async Task Load(INavigationParameters parameters)
         {
-            try
-            {
-                Banners = new Banner
-                {
-                    Time = 5,
-                    ImageUrl = new List<string>
-                    {
-                        "https://thumbs.dreamstime.com/b/smart-wallet-banner-mobile-payment-concept-vector-landing-page-electronic-finance-isometric-icon-virtual-banking-card-199231196.jpg",
-                        "https://neilpatel.com/wp-content/uploads/2019/12/ilustracao-sobre-cashback-e-como-funciona.jpeg"
-                    }
-                };
-
-                Funds = new List<AccountFunds>
-                {
-                    new AccountFunds
-                    {
-                        Title = "PONTOS",
-                        Currency = "SD$",
-                        Value = 10000000
-                    },
-                    new AccountFunds
-                    {
-                        Title = "CARTEIRA DIGITAL",
-                        Currency = "R$",
-                        Value = 5000
-                    }
-                };
-            }
-            catch (Exception ex)
-            {
-                HandleException(ex);
-            }
         }
 
         #region Bindings
-        private Banner _banners;
-        public Banner Banners
-        {
-            get { return _banners; }
-            set { SetProperty(ref _banners, value); }
-        }
-
-        private List<AccountFunds> _funds;
-        public List<AccountFunds> Funds
-        {
-            get { return _funds; }
-            set { SetProperty(ref _funds, value); }
-        }
-
-
         #endregion
     }
 

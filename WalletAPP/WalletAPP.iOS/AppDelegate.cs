@@ -33,6 +33,7 @@ namespace WalletAPP.iOS
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             Syncfusion.XForms.iOS.Core.SfAvatarViewRenderer.Init();
+            new Syncfusion.SfNavigationDrawer.XForms.iOS.SfNavigationDrawerRenderer();
             Syncfusion.XForms.iOS.TabView.SfTabViewRenderer.Init();
             Syncfusion.XForms.iOS.Border.SfBorderRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
