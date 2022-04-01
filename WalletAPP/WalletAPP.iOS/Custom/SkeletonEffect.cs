@@ -12,16 +12,10 @@ namespace WalletAPP.iOS.Custom
     {
         protected override void OnAttached()
         {
-            try
-            {
-                Xamarin.Forms.Color bgColor = Xamarin.Forms.Color.FromHex("#FFECECEC");
-                var toggle = (UILabel)Control;
-                toggle.TextColor = bgColor.ToUIColor();
-                toggle.BackgroundColor = bgColor.ToUIColor();
-            }
-            catch (Exception ex)
-            {
-            }
+            Color bgColor = Color.FromHex("#FFECECEC");
+            var toggle = (UILabel)Control;
+            toggle.TextColor = bgColor.ToUIColor();
+            toggle.BackgroundColor = bgColor.ToUIColor();
         }
 
         protected override void OnDetached()
@@ -29,7 +23,6 @@ namespace WalletAPP.iOS.Custom
             var theme = new GerminiStyleKit();
 
             var toggle = (UILabel)Control;
-
 
             toggle.TextColor = theme.BackgroundColorPage.ToUIColor();
             toggle.BackgroundColor = theme.PrimaryTextColor.ToUIColor();
@@ -39,16 +32,11 @@ namespace WalletAPP.iOS.Custom
         {
             base.OnElementPropertyChanged(args);
 
-            try
-            {
-                Xamarin.Forms.Color bgColor = Xamarin.Forms.Color.FromHex("#FFECECEC");
-                var toggle = (UILabel)Control;
-                toggle.TextColor = bgColor.ToUIColor();
-                toggle.BackgroundColor = bgColor.ToUIColor();
-            }
-            catch (Exception ex)
-            {
-            }
+            Color bgColor = Color.FromHex("#FFECECEC");
+            var toggle = (UILabel)Control;
+            toggle.TextColor = bgColor.ToUIColor();
+            toggle.BackgroundColor = bgColor.ToUIColor();
+
         }
     }
 }

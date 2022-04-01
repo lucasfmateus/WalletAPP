@@ -1,6 +1,6 @@
-﻿using WalletAPP.Droid.Custom;
-using System;
+﻿using System;
 using System.ComponentModel;
+using WalletAPP.Droid.Custom;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -12,17 +12,12 @@ namespace WalletAPP.Droid.Custom
     {
         protected override void OnAttached()
         {
-            try
-            {
-                Xamarin.Forms.Color bgColor = Xamarin.Forms.Color.FromHex("#FFECECEC");
+            Color bgColor = Color.FromHex("#FFECECEC");
 
-                var toggle = (Android.Widget.TextView)Control;
-                toggle.SetTextColor(bgColor.ToAndroid());
-                toggle.SetBackgroundColor(bgColor.ToAndroid());
-            }
-            catch (Exception ex)
-            {
-            }
+            var toggle = (Android.Widget.TextView)Control;
+            toggle.SetTextColor(bgColor.ToAndroid());
+            toggle.SetBackgroundColor(bgColor.ToAndroid());
+
         }
 
         protected override void OnDetached()
@@ -38,17 +33,12 @@ namespace WalletAPP.Droid.Custom
         {
             base.OnElementPropertyChanged(args);
 
-            try
-            {
-                Xamarin.Forms.Color bgColor = Xamarin.Forms.Color.FromHex("#FFECECEC");
+            Color bgColor = Color.FromHex("#FFECECEC");
 
-                var toggle = (Android.Widget.TextView)Control;
-                toggle.SetTextColor(bgColor.ToAndroid());
-                toggle.SetBackgroundColor(bgColor.ToAndroid());
-            }
-            catch (Exception ex)
-            {
-            }
+            var toggle = (Android.Widget.TextView)Control;
+            toggle.SetTextColor(bgColor.ToAndroid());
+            toggle.SetBackgroundColor(bgColor.ToAndroid());
+
         }
     }
 }

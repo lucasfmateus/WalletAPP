@@ -1,9 +1,4 @@
-﻿using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WalletAPP.Models
+﻿namespace WalletAPP.Models
 {
     public class AccountFunds
     {

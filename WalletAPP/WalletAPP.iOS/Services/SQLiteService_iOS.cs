@@ -1,12 +1,7 @@
-﻿using Foundation;
-using WalletAPP.Services.Base;
-using SQLite;
+﻿using SQLite;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using UIKit;
+using WalletAPP.Services.Base;
 
 namespace WalletAPP.iOS.Services
 {

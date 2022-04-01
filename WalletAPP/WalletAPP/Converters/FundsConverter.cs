@@ -1,9 +1,7 @@
-﻿using WalletAPP.Views.Parts;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
 using System.Linq;
-using System.Text;
+using WalletAPP.Views.Parts;
 using Xamarin.Forms;
 
 namespace WalletAPP.Converters

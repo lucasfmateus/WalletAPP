@@ -1,13 +1,12 @@
-﻿using WalletAPP.Models;
-using WalletAPP.Views.Parts;
-using Syncfusion.DataSource.Extensions;
+﻿using Syncfusion.DataSource.Extensions;
 using Syncfusion.ListView.XForms;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
-using Xamarin.Forms;
 using System.Linq;
+using WalletAPP.Models;
+using WalletAPP.Views.Parts;
+using Xamarin.Forms;
 
 namespace WalletAPP.Converters
 {

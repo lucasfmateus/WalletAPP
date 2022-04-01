@@ -1,17 +1,12 @@
 ﻿using Gem.Bindings;
-using WalletAPP.Models;
-using WalletAPP.Utils;
 using Prism.Navigation;
-using Syncfusion.DataSource;
-using Syncfusion.SfCarousel.XForms;
 using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
+using WalletAPP.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

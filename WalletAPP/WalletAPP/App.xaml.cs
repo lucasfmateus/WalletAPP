@@ -2,13 +2,13 @@
 using Gem.AppCenter;
 using Gem.Bindings;
 using Gem.UX;
-using WalletAPP.Views.Pages;
-using WalletAPP.Views.Shell;
 using Plugin.Iconize;
 using Prism;
 using Prism.AppModel;
 using Prism.Ioc;
 using System.Threading.Tasks;
+using WalletAPP.Views.Pages;
+using WalletAPP.Views.Shell;
 using Xamarin.Forms;
 
 namespace WalletAPP

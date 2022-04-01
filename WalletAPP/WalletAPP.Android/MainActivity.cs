@@ -1,12 +1,12 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
 using Android.OS;
+using Android.Runtime;
+using Plugin.Iconize;
 using Prism;
 using Prism.Ioc;
-using WalletAPP.Services.Base;
-using Plugin.Iconize;
 using Syncfusion.XForms.Android.PopupLayout;
+using WalletAPP.Services.Base;
 
 namespace WalletAPP.Droid
 {

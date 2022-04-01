@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using WalletAPP.iOS.Services;
-using WalletAPP.Services.Base;
+﻿using Foundation;
 using Plugin.Iconize;
 using Prism;
 using Prism.Ioc;
 using Syncfusion.ListView.XForms.iOS;
 using UIKit;
+using WalletAPP.iOS.Services;
+using WalletAPP.Services.Base;
 
 namespace WalletAPP.iOS
 {

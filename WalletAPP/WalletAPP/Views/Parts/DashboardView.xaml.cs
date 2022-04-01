@@ -1,18 +1,15 @@
 ﻿using Gem.Bindings;
-using WalletAPP.Models;
-using WalletAPP.Utils;
 using Plugin.Iconize;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
+using WalletAPP.Models;
+using WalletAPP.Utils;
+using WalletAPP.Views.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Prism.Events;
-using WalletAPP.Views.Pages;
 
 namespace WalletAPP.Views.Parts
 {

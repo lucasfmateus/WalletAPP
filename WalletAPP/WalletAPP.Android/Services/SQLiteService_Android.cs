@@ -1,7 +1,7 @@
-﻿using WalletAPP.Services.Base;
-using SQLite;
+﻿using SQLite;
 using System;
 using System.IO;
+using WalletAPP.Services.Base;
 
 namespace WalletAPP.Droid.Services
 {
@@ -22,11 +22,7 @@ namespace WalletAPP.Droid.Services
                 {
                     var fileName = string.Concat("infinitusapp", ".db");
 
-                    var path = Path.Combine(
-
-                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-
-                        , fileName);
+                    var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), fileName);
 
                     connection = new SQLiteConnection(path);
                 }
