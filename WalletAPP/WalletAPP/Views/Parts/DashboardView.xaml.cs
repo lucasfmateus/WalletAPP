@@ -82,39 +82,39 @@ namespace WalletAPP.Views.Parts
                     new CoinWallet
                     {
                         Id = "1",
-                        Name = "DOLAR",
                         Balance = 787.41M,
                         Coin = new Coin
                         {
-                            Abbreviation =  "BUSD",
+                            Abbreviation = "SD$",
+                            Symbol = "https://scontent.fbfh9-1.fna.fbcdn.net/v/t1.6435-9/117933338_880846769111005_8671486982752218507_n.png?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGo_X_GmcFuACZmHM59WKAlON3--HKUa_M43f74cpRr8zhpe8Si_wmuJ5kEazXMpCGf3PiQeA0rDBJL6hgjjofN&_nc_ohc=pnVaAfwYqhIAX_nO13G&_nc_ht=scontent.fbfh9-1.fna&oh=00_AT9AHWgiSomrjkwEwY5K1ZdIR8WcE76Tkx8xpTid0dJ4Zw&oe=6291FC56",
                             DecimalPlaces = 2,
-                            Name = "DOLAR",
+                            Name = "SEEDS",
                             Id = "1"
                         }
                     },
                     new CoinWallet
                     {
                         Id = "2",
-                        Name = "REAL",
                         Balance = 0.39M,
                         Coin = new Coin
                         {
-                            Abbreviation =  "BRL",
+                            Abbreviation = "BK$",
+                            Symbol = "https://scontent.fbfh9-1.fna.fbcdn.net/v/t1.6435-9/88248359_213586670027043_6946853711423471616_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHSSaDcwLY6fG8C6lmxzTSIqCSgMR0B-KaoJKAxHQH4pr8ywEBUSKZybKpE096Ve7ESYt4A91Z-URODs3lS6TF-&_nc_ohc=pD9uwg72IuYAX_OV7jw&tn=wSQkmp20O9kB9WKw&_nc_ht=scontent.fbfh9-1.fna&oh=00_AT-5h-Nw12ZlItNU1JHb3-nF8nYGbf7-7szC_tsTmACrUA&oe=62939F90",
                             DecimalPlaces = 2,
-                            Name = "REAL",
+                            Name = "B2K",
                             Id = "2"
                         }
                     },
                     new CoinWallet
                     {
                         Id = "3",
-                        Name = "BINANCE",
                         Balance = 0.05M, 
                         Coin = new Coin
                         {
-                            Abbreviation =  "BNB",
+                            Abbreviation = "SPR$",
+                            Symbol = "https://media.glassdoor.com/sqll/2485853/spro-it-solutions-squarelogo-1553472085617.png",
                             DecimalPlaces = 2,
-                            Name = "BINANCE",
+                            Name = "SPRO GROUP",
                             Id = "3"
                         }
                     },
@@ -139,12 +139,12 @@ namespace WalletAPP.Views.Parts
         });
 
         #region Bindings
-        private Banner _banners;
-        public Banner Banners
-        {
-            get { return _banners; }
-            set { SetProperty(ref _banners, value); }
-        }
+        //private Banner _banners;
+        //public Banner Banners
+        //{
+        //    get { return _banners; }
+        //    set { SetProperty(ref _banners, value); }
+        //}
         
         private Fund _funds;
         public Fund Funds

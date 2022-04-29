@@ -32,7 +32,7 @@
     <ContentView.Content>
 
         <Grid>
-            
+
             <Grid>
 
                 <Grid.RowDefinitions>
@@ -245,7 +245,7 @@
                                 />
                             
                             <Label
-                                Text="Carteiras"
+                                Text="Moedas"
                                 FontSize="16"
                                 FontFamily="{StaticResource MetropolisFontBold}"
                                 FontAttributes="Bold"
@@ -280,20 +280,17 @@
                                                 Grid.Column="0"
                                                 ContentType="Default"
                                                 BorderColor="Transparent"
-                                                WidthRequest="28"
-                                                HeightRequest="28"
+                                                WidthRequest="38"
+                                                HeightRequest="38"
                                                 CornerRadius="100"
                                                 HorizontalOptions="Center"
                                                 VerticalOptions="Center"
                                                 BackgroundColor="{StaticResource AccentColor}"
                                                 >
 
-                                                <iconize:IconImage
-                                                    Icon="mdi-shopping"
-                                                    IconSize="18"
-                                                    IconColor="{DynamicResource TextColorOfPrimaryColor}"
-                                                    WidthRequest="20"
-                                                    HeightRequest="20"
+                                                <Image
+                                                    Source="{Binding Coin.Symbol}"
+                                                    BackgroundColor="{DynamicResource TextColorOfPrimaryColor}"
                                                     Aspect="AspectFill"
                                                     HorizontalOptions="Center"
                                                     />
@@ -315,7 +312,7 @@
                                                     Grid.Column="0"
                                                     TextColor="{DynamicResource PrimaryColorDark}"
                                                     FontFamily="{StaticResource MetropolisFont}"
-                                                    Text="{Binding Name}"
+                                                    Text="{Binding Coin.Name}"
                                                     FontSize="16"
                                                     VerticalOptions="End"
                                                     HorizontalOptions="StartAndExpand"
@@ -351,7 +348,7 @@
                             <Frame
                                 Padding="8"
                                 CornerRadius="8"
-                                BackgroundColor="#4d0769ca"
+                                BackgroundColor="#1a0769ca"
                                 Margin="0"  
                                 VerticalOptions="Start"                  
                                 >
@@ -363,6 +360,7 @@
                                     FontAttributes="Bold"
                                     HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
+                                    Opacity="0.8"
                                     TextColor="{DynamicResource PrimaryColor}"
                                     />
 

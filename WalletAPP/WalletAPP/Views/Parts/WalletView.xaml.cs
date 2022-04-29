@@ -3,7 +3,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using WalletAPP.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -41,44 +41,68 @@ namespace WalletAPP.Views.Parts
 
         public override async Task Load(INavigationParameters parameters = null)
         {
-            Data = new List<Chart>()
+
+            Wallets = new List<CoinWallet>
             {
-                 new Chart{ Date = DateTime.Now, Value = 1},
-                 new Chart{ Date = DateTime.Now.AddDays(-1), Value = 3},
-                 new Chart{ Date = DateTime.Now.AddDays(-2), Value = 13},
-                 new Chart{ Date = DateTime.Now.AddDays(-3), Value = 21},
-                 new Chart{ Date = DateTime.Now.AddDays(-4), Value = -7},
-                 new Chart{ Date = DateTime.Now.AddDays(-5), Value = -11},
+                new CoinWallet
+                {
+                    Id = "1",
+                    Name = "DOLAR",
+                    Balance = 787.41M,
+                    Coin = new Coin
+                    {
+                        Abbreviation =  "BUSD",
+                        DecimalPlaces = 2,
+                        Name = "DOLAR",
+                        Id = "1"
+                    }
+                },
+                new CoinWallet
+                {
+                    Id = "2",
+                    Name = "REAL",
+                    Balance = 0.39M,
+                    Coin = new Coin
+                    {
+                        Abbreviation =  "BRL",
+                        DecimalPlaces = 2,
+                        Name = "REAL",
+                        Id = "2"
+                    }
+                },
+                new CoinWallet
+                {
+                    Id = "3",
+                    Name = "BINANCE",
+                    Balance = 0.05M,
+                    Coin = new Coin
+                    {
+                        Abbreviation =  "BNB",
+                        DecimalPlaces = 2,
+                        Name = "BINANCE",
+                        Id = "3"
+                    }
+                },
             };
-
-            //Data = new List<Person>()
-            //{
-            //    new Person { Name = "David", Height = 180 },
-            //    new Person { Name = "Michael", Height = 170 },
-            //    new Person { Name = "Steve", Height = 160 },
-            //    new Person { Name = "Joel", Height = 182 }
-            //};
         }
 
-        private List<Chart> data;
-
-        public List<Chart> Data
+        #region Bindings
+        private Fund _funds;
+        public Fund Funds
         {
-            get { return data; }
-            set { SetProperty(ref data, value); }
+            get { return _funds; }
+            set { SetProperty(ref _funds, value); }
         }
 
-    }
-    public class Person
-    {
-        public string Name { get; set; }
+        private List<CoinWallet> _wallets;
+        public List<CoinWallet> Wallets
+        {
+            get { return _wallets; }
+            set { SetProperty(ref _wallets, value); }
+        }
 
-        public double Height { get; set; }
-    }
-    public class Chart
-    {
-        public DateTime Date { get; set; }
-        public decimal Value { get; set; }
+        #endregion
+
     }
 
 }

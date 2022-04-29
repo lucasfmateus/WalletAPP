@@ -13,8 +13,8 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
             
             <Grid
@@ -39,86 +39,149 @@
                 
             </Grid>
 
-            <StackLayout
-                Spacing="0"
+            <Grid
                 Grid.Row="1"
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                >               
+                
+                
+            </Grid>
+
+            <Frame
+                Grid.Row="2"
+                Margin="0,-8"
+                BackgroundColor="#f2f2f2"
+                VerticalOptions="FillAndExpand"
+                CornerRadius="8"
+                Padding="16"
+                HasShadow="False"
                 >
 
-                <Grid
-                    BackgroundColor="{DynamicResource BackgroundColorAppBar}"
-                    Padding="16,10"
-                    ColumnSpacing="16"
+                <StackLayout
+                    Spacing="8"
+                    BindableLayout.ItemsSource="{Binding Wallets}"
                     >
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <BindableLayout.ItemTemplate>
+                    
+                        <DataTemplate>
 
-                    <sfavatar:SfAvatarView 
-                        Grid.Column="0"
-                        ContentType="Default"
-                        BorderColor="Transparent"
-                        WidthRequest="36"
-                        HeightRequest="36"
-                        CornerRadius="100"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        BackgroundColor="{StaticResource AccentColor}"
-                        >
+                            <Frame
+                                Padding="16"
+                                CornerRadius="8"
+                                BackgroundColor="{DynamicResource TextColorOfPrimaryColor}"
+                                Margin="0"  
+                                VerticalOptions="Start"        
+                                >
 
-                        <iconize:IconImage
-                            Icon="mdi-shopping"
-                            IconSize="24"
-                            IconColor="{DynamicResource TextColorOfPrimaryColor}"
-                            WidthRequest="22"
-                            HeightRequest="22"
-                            Aspect="AspectFill"
-                            HorizontalOptions="Center"
-                            />
 
-                    </sfavatar:SfAvatarView>
+                                <StackLayout
+                                    Spacing="0"
+                                    >
 
-                    <Grid
-                        Grid.Column="1"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center"
-                        >
+                                    <Grid
+                                        Grid.Row="0"
+                                        BackgroundColor="{DynamicResource BackgroundColorAppBar}"
+                                        ColumnSpacing="16"
+                                        >
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
 
-                        <Label
-                            Grid.Column="0"
-                            TextColor="{DynamicResource PrimaryColorDark}"
-                            Text="Carteira C.Vale"
-                            FontSize="16"
-                            VerticalOptions="End"
-                            HorizontalOptions="StartAndExpand"
-                            />
+                                        <sfavatar:SfAvatarView 
+                                            Grid.Column="0"
+                                            ContentType="Default"
+                                            BorderColor="Transparent"
+                                            WidthRequest="36"
+                                            HeightRequest="36"
+                                            CornerRadius="100"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="{StaticResource AccentColor}"
+                                            >
 
-                        <Label
-                            Grid.Column="1"
-                            TextColor="{DynamicResource PrimaryColorDark}"
-                            Text="R$ 0,00"
-                            FontSize="18"
-                            HorizontalOptions="End"
-                            VerticalOptions="End"
-                            />
+                                            <iconize:IconImage
+                                                Icon="mdi-shopping"
+                                                IconSize="24"
+                                                IconColor="{DynamicResource TextColorOfPrimaryColor}"
+                                                WidthRequest="22"
+                                                HeightRequest="22"
+                                                Aspect="AspectFill"
+                                                HorizontalOptions="Center"
+                                                />
 
-                    </Grid>                   
+                                        </sfavatar:SfAvatarView>
 
-                </Grid>
+                                        <Grid
+                                            Grid.Column="1"
+                                            RowSpacing="0"
+                                            >
 
-                <Grid 
-                    BackgroundColor="LightGray" 
-                    HeightRequest="1"
-                    Opacity="0.5"
-                    />
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
 
-            </StackLayout>
+                                            <Grid
+                                                Grid.Row="0"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="Center"
+                                                >
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label
+                                                    Grid.Column="0"
+                                                    TextColor="{DynamicResource PrimaryColorDark}"
+                                                    FontFamily="{StaticResource MetropolisFont}"
+                                                    Text="Carteira C.Vale"
+                                                    FontSize="16"
+                                                    VerticalOptions="End"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    />
+
+                                                <Label
+                                                    Grid.Column="1"
+                                                    TextColor="{DynamicResource PrimaryColorDark}"
+                                                    FontFamily="{StaticResource MetropolisFontBold}"
+                                                    Text="R$ 0,00"
+                                                    FontSize="18"
+                                                    HorizontalOptions="End"
+                                                    VerticalOptions="End"
+                                                    />
+
+                                            </Grid>
+
+                                            <Label
+                                                Grid.Row="1"
+                                                Text="$0,00"
+                                                TextColor="{DynamicResource DisabledTextColor}"
+                                                FontSize="12"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                />
+
+                                        </Grid>
+
+                                    </Grid>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                        </DataTemplate>
+                    
+                    </BindableLayout.ItemTemplate>
+
+                </StackLayout>
+            </Frame>
+       
         </Grid>
   
     </ContentView.Content>

@@ -315,8 +315,8 @@
 
                                             <Label
                                                 Grid.Column="1"
-                                                TextColor="{DynamicResource DisabledTextColor}"
                                                 Text="{Binding PointsRedeemed, StringFormat='SD$ -{0}'}"
+                                                TextColor="{DynamicResource DisabledTextColor}"
                                                 FontSize="12"
                                                 HorizontalOptions="End"
                                                 VerticalOptions="End"
