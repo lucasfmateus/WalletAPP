@@ -28,13 +28,13 @@ namespace WalletAPP
         public override void Configure(GemAppOptions options)
         {
             options.UseAppCenter = true;
-            options.InitializerType = typeof(GerminiInitializer);
+            options.InitializerType = typeof(Initializer);
         }
 
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            StyleKit = Container.Resolve<GerminiStyleKit>();
+            StyleKit = Container.Resolve<StyleKit>();
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTkyNTQyQDMxMzcyZTM0MmUzMEpZVmR6VlhrY3BJcVN0VXUrakNDZmovQ05Jd291SFZTRXZGOXhoeEUyeU09");
         }
 
@@ -46,9 +46,9 @@ namespace WalletAPP
         }
     }
 
-    public class GerminiStyleKit : MaterialStyleKit
+    public class StyleKit : MaterialStyleKit
     {
-        public GerminiStyleKit()
+        public StyleKit()
         {
             PrimaryColor = Color.FromHex("#FF0769ca");
 
@@ -73,9 +73,9 @@ namespace WalletAPP
         }
     }
 
-    public class GerminiInitializer : AppInitializer
+    public class Initializer : AppInitializer
     {
-        public GerminiInitializer(GemAppOptions appOptions, ApplicationStore applicationStore, ViewModelBaseServices viewModelBaseServices) : base(appOptions, applicationStore, viewModelBaseServices)
+        public Initializer(GemAppOptions appOptions, ApplicationStore applicationStore, ViewModelBaseServices viewModelBaseServices) : base(appOptions, applicationStore, viewModelBaseServices)
         {
         }
 

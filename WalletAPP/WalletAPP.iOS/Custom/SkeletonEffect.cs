@@ -20,7 +20,7 @@ namespace WalletAPP.iOS.Custom
 
         protected override void OnDetached()
         {
-            var theme = new GerminiStyleKit();
+            var theme = new StyleKit();
 
             var toggle = (UILabel)Control;
 

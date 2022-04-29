@@ -16,6 +16,21 @@ namespace WalletAPP.Views.Parts
         {
             InitializeComponent(); 
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            //var styleKit = new StyleKit();
+
+            //if(favorit.IconColor == Color.LightGray)
+            //{
+            //    favorit.IconColor = styleKit.SecondaryColor;
+            //}
+            //else
+            //{
+            //    favorit.IconColor = Color.LightGray;
+            //}
+
+        }
     }
 
     public class WalletViewModel : ViewModelBase

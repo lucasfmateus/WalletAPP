@@ -117,7 +117,7 @@
 
                     <Frame
                         Grid.Column="2"
-                        CornerRadius="10"
+                        CornerRadius="8"
                         BackgroundColor="#26000000"
                         VerticalOptions="Center"
                         Padding="10"
@@ -185,7 +185,7 @@
                                             VerticalOptions="FillAndExpand"
                                             Padding="0"
                                             HasShadow="False"
-                                            WidthRequest="5"
+                                            WidthRequest="4"
                                             />
 
                                         <StackLayout
