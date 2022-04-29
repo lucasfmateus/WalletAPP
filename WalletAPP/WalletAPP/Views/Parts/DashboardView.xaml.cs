@@ -29,14 +29,14 @@ namespace WalletAPP.Views.Parts
             iconImage.Icon = iconImage.Icon  == "mdi-eye-off-outline" ? "mdi-eye-outline" : "mdi-eye-off-outline";
         }
 
-        private void CarouselViewContent_SizeChanged(object sender, EventArgs e) 
-        { 
-            var contentSize = ((VisualElement)sender).Height; 
-            if (contentSize > banner.HeightRequest) 
-            {
-                banner.HeightRequest = contentSize; 
-            } 
-        }
+        //private void CarouselViewContent_SizeChanged(object sender, EventArgs e) 
+        //{ 
+        //    var contentSize = ((VisualElement)sender).Height; 
+        //    if (contentSize > banner.HeightRequest) 
+        //    {
+        //        banner.HeightRequest = contentSize; 
+        //    } 
+        //}
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
@@ -58,32 +58,66 @@ namespace WalletAPP.Views.Parts
         {
             try
             {
-                Banners = new Banner
+                //Banners = new Banner
+                //{
+                //    Time = 5,
+                //    ImageUrl = new List<string>
+                //    {
+                //        "https://thumbs.dreamstime.com/b/smart-wallet-banner-mobile-payment-concept-vector-landing-page-electronic-finance-isometric-icon-virtual-banking-card-199231196.jpg",
+                //        "https://neilpatel.com/wp-content/uploads/2019/12/ilustracao-sobre-cashback-e-como-funciona.jpeg"
+                //    }
+                //};
+
+                Funds = new Fund
                 {
-                    Time = 5,
-                    ImageUrl = new List<string>
-                    {
-                        "https://thumbs.dreamstime.com/b/smart-wallet-banner-mobile-payment-concept-vector-landing-page-electronic-finance-isometric-icon-virtual-banking-card-199231196.jpg",
-                        "https://neilpatel.com/wp-content/uploads/2019/12/ilustracao-sobre-cashback-e-como-funciona.jpeg"
-                    }
+                    Abbreviation = "R$",
+                    Balance = 0.0M,
+                    DecimalPlaces = 2,
+                    Id = "1",
+                    Name = "SALDO"
                 };
 
-                Funds = new List<AccountFunds>
+                Wallets = new List<CoinWallet>
                 {
-                    new AccountFunds
+                    new CoinWallet
                     {
                         Id = "1",
-                        Title = "PONTOS",
-                        Currency = "SD$",
-                        Value = 10000000
+                        Name = "DOLAR",
+                        Balance = 787.41M,
+                        Coin = new Coin
+                        {
+                            Abbreviation =  "BUSD",
+                            DecimalPlaces = 2,
+                            Name = "DOLAR",
+                            Id = "1"
+                        }
                     },
-                    new AccountFunds
+                    new CoinWallet
                     {
                         Id = "2",
-                        Title = "CARTEIRA DIGITAL",
-                        Currency = "R$",
-                        Value = 5000
-                    }
+                        Name = "REAL",
+                        Balance = 0.39M,
+                        Coin = new Coin
+                        {
+                            Abbreviation =  "BRL",
+                            DecimalPlaces = 2,
+                            Name = "REAL",
+                            Id = "2"
+                        }
+                    },
+                    new CoinWallet
+                    {
+                        Id = "3",
+                        Name = "BINANCE",
+                        Balance = 0.05M, 
+                        Coin = new Coin
+                        {
+                            Abbreviation =  "BNB",
+                            DecimalPlaces = 2,
+                            Name = "BINANCE",
+                            Id = "3"
+                        }
+                    },
                 };
             }
             catch (Exception ex)
@@ -111,12 +145,19 @@ namespace WalletAPP.Views.Parts
             get { return _banners; }
             set { SetProperty(ref _banners, value); }
         }
-
-        private List<AccountFunds> _funds;
-        public List<AccountFunds> Funds
+        
+        private Fund _funds;
+        public Fund Funds
         {
             get { return _funds; }
             set { SetProperty(ref _funds, value); }
+        }
+
+        private List<CoinWallet> _wallets;
+        public List<CoinWallet> Wallets
+        {
+            get { return _wallets; }
+            set { SetProperty(ref _wallets, value); }
         }
 
         #endregion

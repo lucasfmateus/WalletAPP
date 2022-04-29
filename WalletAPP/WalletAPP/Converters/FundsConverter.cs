@@ -21,9 +21,9 @@ namespace WalletAPP.Converters
 
             var idValue = value as string;
 
-            var item = context.Funds.Where(x => x.Id == idValue).FirstOrDefault();
+            var item = context.Wallets.Where(x => x.Id == idValue).FirstOrDefault();
 
-            return item.Currency + " " + item.Value.ToString("F2");
+            return item.Coin.Abbreviation + " " + item.Balance.ToString("F2");
 
 
         }

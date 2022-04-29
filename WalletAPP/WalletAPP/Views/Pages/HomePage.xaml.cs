@@ -123,7 +123,7 @@ namespace WalletAPP.Views.Pages
 
         #region Binding
 
-        private int _selectedTab = 2;
+        private int _selectedTab = 0;
         public int SelectedTab
         {
             get { return _selectedTab; }

@@ -19,7 +19,7 @@ namespace WalletAPP.Converters
 
             var Vm = listView.BindingContext as DashboardViewModel;
 
-            var items = Vm.Funds;
+            var items = Vm.Wallets;
 
             if (value == null)
                 return false;
